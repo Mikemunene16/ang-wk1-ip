@@ -1,0 +1,30 @@
+<div class="overlay">
+    <h1 style="text-align: center;">
+        {{ title | titlecase }}
+    </h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5">
+          <app-quotes-form></app-quotes-form>
+      </div>
+
+      <div class="col-md-7">
+        <div class="card" *ngFor="let quote of sortQuotes let i= index" style="margin-bottom: 20px;">
+          <div class="card-header" appHighlightQoute>{{quote.title}}</div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p id="param">{{quote.quote}}</p>
+              <footer class="blockquote-footer"><cite title="Source Title">{{quote.author}}</cite></footer>
+            </blockquote>
+          </div>
+          <app-quote-details></app-quote-details> 
+        </div> 
+      </div>
+      </div>
+    </div>
+        
+            
+</div>
+    
+            
+                
