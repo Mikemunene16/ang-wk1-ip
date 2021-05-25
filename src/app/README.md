@@ -1,4 +1,4 @@
-# QuotesApp
+# Quote App
 
 ## Author
 
