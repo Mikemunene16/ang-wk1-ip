@@ -10,14 +10,16 @@
 
       <div class="col-md-7">
         <div class="card" *ngFor="let quote of sortQuotes let i= index" style="margin-bottom: 20px;">
-          <div class="card-header" appHighlightQoute>{{quote.title}}</div>
+          <div class="card-header" appHighlightQoute>{{quote.title}} <button (click)='displayInfo(i)' class="btn btn-warning btn-sm" id="quotes-button" >See More</button> </div>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
               <p id="param">{{quote.quote}}</p>
               <footer class="blockquote-footer"><cite title="Source Title">{{quote.author}}</cite></footer>
             </blockquote>
           </div>
-          <app-quote-details></app-quote-details> 
+          <app-quote-details *ngIf='quote.showInfo' bind-quoty='quote'></app-quote-details> 
+          <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
+
         </div> 
       </div>
       </div>

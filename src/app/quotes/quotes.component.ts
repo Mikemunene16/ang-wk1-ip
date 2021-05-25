@@ -30,6 +30,20 @@ export class QuotesComponent implements OnInit {
     this.quote.push(quote)
   }
 
+  quoteDelete(isRead: any, index: any){
+    if (isRead) {
+      let toDelete = confirm(`Are you sure you want to delete this Quote?`)
+      if(toDelete){
+        this.quote.splice(index,1);
+      }
+      
+    }
+  }
+
+  displayInfo(index: any){
+    this.quote[index].showInfo = !this.quote[index].showInfo;
+  }
+
 
   constructor() { }
 
